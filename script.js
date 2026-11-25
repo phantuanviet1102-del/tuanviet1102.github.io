@@ -1,0 +1,3 @@
+const count=document.querySelector('#cart-count');let total=0;
+document.querySelectorAll('.add-btn').forEach(button=>button.addEventListener('click',()=>{total+=1;count.textContent=total;button.textContent='Đã thêm ✓';setTimeout(()=>button.textContent='Thêm vào giỏ',900)}));
+document.querySelector('#search').addEventListener('input',event=>{const term=event.target.value.trim().toLocaleLowerCase('vi');let visible=0;document.querySelectorAll('.product-card').forEach(card=>{const match=card.dataset.name.toLocaleLowerCase('vi').includes(term);card.hidden=!match;if(match)visible++});document.querySelector('#empty-state').hidden=visible!==0;});
