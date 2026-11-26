@@ -1,4 +1,4 @@
-# NovaShop – Website bán hàng trực tuyến mẫu
+# Tuanvietshop – Website bán hàng trực tuyến mẫu
 
 ## Mở website
 Mở trực tiếp `index.html` bằng trình duyệt hiện đại. Không cần cài đặt máy chủ.

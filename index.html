@@ -98,15 +98,20 @@
 </head>
 
 <body class="antialiased selection:bg-violet-400/30 selection:text-white">
+  <!-- Input ẩn dùng để chọn ảnh từ máy -->
+  <input type="file" id="avatarInput" accept="image/*" class="hidden" />
+  <input type="file" id="galleryInput" accept="image/*" multiple class="hidden" />
+
   <!-- Navigation -->
   <header class="fixed top-0 inset-x-0 z-50 px-4 pt-4">
     <nav class="glass max-w-6xl mx-auto rounded-2xl px-5 md:px-6 h-[68px] flex items-center justify-between" aria-label="Điều hướng chính">
-      <a href="#home" class="flex items-center gap-2.5 font-extrabold tracking-tight text-lg" aria-label="AURA trang chủ">
+      <a href="#home" class="flex items-center gap-2.5 font-extrabold tracking-tight text-lg" aria-label="Tuấn Việt trang chủ">
         <span class="w-8 h-8 rounded-xl bg-gradient-to-br from-violet-300 to-emerald-200 text-[#11121a] grid place-items-center"><i data-lucide="aperture" class="w-[18px] h-[18px]"></i></span>
-        AURA<span class="text-violet-200">.</span>
+        TUẤN VIỆT<span class="text-violet-200">.</span>
       </a>
       <div class="hidden md:flex items-center gap-8 text-[13px] font-semibold">
         <a class="nav-link" href="#features">Tính năng</a>
+        <a class="nav-link" href="#gallery">Thư viện ảnh</a>
         <a class="nav-link" href="#workflow">Cách hoạt động</a>
         <a class="nav-link" href="#stories">Khách hàng</a>
         <a class="nav-link" href="#pricing">Bảng giá</a>
@@ -122,6 +127,7 @@
     </nav>
     <div id="mobileMenu" class="glass max-w-6xl mx-auto mt-2 rounded-2xl p-3 hidden md:hidden">
       <a class="block rounded-xl px-4 py-3 text-sm nav-link" href="#features">Tính năng</a>
+      <a class="block rounded-xl px-4 py-3 text-sm nav-link" href="#gallery">Thư viện ảnh</a>
       <a class="block rounded-xl px-4 py-3 text-sm nav-link" href="#workflow">Cách hoạt động</a>
       <a class="block rounded-xl px-4 py-3 text-sm nav-link" href="#stories">Khách hàng</a>
       <a class="block rounded-xl px-4 py-3 text-sm nav-link" href="#pricing">Bảng giá</a>
@@ -143,15 +149,15 @@
           Ý tưởng lớn.<br><span class="gradient-text">Không giới hạn.</span>
         </h1>
         <p class="reveal delay-2 max-w-2xl mx-auto mt-7 text-base md:text-lg leading-8 muted">
-          AURA là không gian làm việc AI giúp bạn sắp xếp suy nghĩ, tăng tốc quy trình và biến những ý tưởng còn dang dở thành kết quả đáng tự hào.
+          Tuấn Việt là không gian làm việc AI giúp bạn sắp xếp suy nghĩ, tăng tốc quy trình và biến những ý tưởng còn dang dở thành kết quả đáng tự hào.
         </p>
         <div class="reveal delay-3 mt-9 flex flex-col sm:flex-row justify-center gap-3">
           <a href="#get-started" class="btn rounded-xl px-6 py-3.5 bg-white text-[#101116] text-sm font-extrabold inline-flex items-center justify-center gap-2">
-            Khám phá AURA <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            Khám phá Tuấn Việt <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
-          <a href="#workflow" class="btn rounded-xl px-6 py-3.5 border border-white/15 bg-white/[.035] text-white text-sm font-bold inline-flex items-center justify-center gap-2 hover:bg-white/[.07]">
-            <i data-lucide="play-circle" class="w-4 h-4"></i> Xem cách hoạt động
-          </a>
+          <button type="button" onclick="document.getElementById('galleryInput').click()" class="btn rounded-xl px-6 py-3.5 border border-white/15 bg-white/[.035] text-white text-sm font-bold inline-flex items-center justify-center gap-2 hover:bg-white/[.07]">
+            <i data-lucide="image-plus" class="w-4 h-4 text-violet-200"></i> Thêm ảnh của bạn
+          </button>
         </div>
         <div class="reveal delay-3 mt-7 flex items-center justify-center gap-4 text-[11px] muted">
           <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-300"></i> Không cần thẻ tín dụng</span>
@@ -166,12 +172,12 @@
         <div class="mock-window relative rounded-[26px] border border-white/15 shadow-2xl shadow-black/50 overflow-hidden">
           <div class="h-12 px-5 border-b border-white/[.08] flex items-center justify-between">
             <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#ff6b68]/80"></span><span class="w-2.5 h-2.5 rounded-full bg-[#f6c65b]/80"></span><span class="w-2.5 h-2.5 rounded-full bg-[#65d69a]/80"></span></div>
-            <div class="hidden sm:flex items-center gap-2 text-[10px] text-gray-500 bg-white/[.04] rounded-md px-16 py-1.5"><i data-lucide="lock" class="w-3 h-3"></i> app.aura.space</div>
+            <div class="hidden sm:flex items-center gap-2 text-[10px] text-gray-500 bg-white/[.04] rounded-md px-16 py-1.5"><i data-lucide="lock" class="w-3 h-3"></i> app.tuanviet.space</div>
             <div class="text-[10px] text-gray-500">Workspace / Overview</div>
           </div>
           <div class="grid grid-cols-12 min-h-[340px] md:min-h-[430px]">
             <aside class="hidden sm:block col-span-3 md:col-span-2 border-r border-white/[.07] p-4">
-              <div class="flex items-center gap-2 text-xs font-bold mb-8"><span class="w-6 h-6 rounded-lg bg-violet-300 text-black grid place-items-center"><i data-lucide="aperture" class="w-3.5 h-3.5"></i></span>AURA</div>
+              <div class="flex items-center gap-2 text-xs font-bold mb-8"><span class="w-6 h-6 rounded-lg bg-violet-300 text-black grid place-items-center"><i data-lucide="aperture" class="w-3.5 h-3.5"></i></span>TUẤN VIỆT</div>
               <div class="space-y-1 text-[10px]">
                 <div class="flex items-center gap-2 rounded-lg bg-violet-400/10 text-violet-200 px-2.5 py-2"><i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i> Tổng quan</div>
                 <div class="flex items-center gap-2 text-gray-500 px-2.5 py-2"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Dự án</div>
@@ -180,13 +186,20 @@
               </div>
               <div class="mt-12 rounded-xl bg-white/[.035] border border-white/[.06] p-3">
                 <div class="w-7 h-7 rounded-lg bg-emerald-300/15 text-emerald-200 grid place-items-center mb-3"><i data-lucide="zap" class="w-4 h-4"></i></div>
-                <div class="text-[10px] font-bold">AURA Pro</div><div class="text-[9px] text-gray-500 mt-1">Mở khóa tiềm năng của bạn.</div>
+                <div class="text-[10px] font-bold">Tuấn Việt Pro</div><div class="text-[9px] text-gray-500 mt-1">Mở khóa tiềm năng của bạn.</div>
               </div>
             </aside>
             <div class="col-span-12 sm:col-span-9 md:col-span-10 p-5 md:p-8">
               <div class="flex justify-between items-start">
-                <div><p class="text-[10px] text-gray-500 mb-2">THỨ HAI, 25 THÁNG 11</p><h3 class="text-xl md:text-2xl font-bold tracking-tight">Chào buổi sáng, Alex <span class="text-xl">✦</span></h3><p class="text-[10px] md:text-xs text-gray-500 mt-1">Sẵn sàng biến hôm nay thành một ngày hiệu quả?</p></div>
-                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-violet-300 to-emerald-200 text-black text-[10px] font-bold grid place-items-center">A</div>
+                <div><p class="text-[10px] text-gray-500 mb-2">THỨ HAI, 25 THÁNG 11</p><h3 class="text-xl md:text-2xl font-bold tracking-tight">Chào buổi sáng, Tuấn Việt <span class="text-xl">✦</span></h3><p class="text-[10px] md:text-xs text-gray-500 mt-1">Sẵn sàng biến hôm nay thành một ngày hiệu quả?</p></div>
+                <!-- Bấm vào Avatar để thay ảnh đại diện -->
+                <button type="button" onclick="document.getElementById('avatarInput').click()" title="Bấm để đổi ảnh đại diện" class="group relative w-10 h-10 rounded-full bg-gradient-to-br from-violet-300 to-emerald-200 text-black text-[10px] font-bold grid place-items-center overflow-hidden ring-2 ring-white/10 hover:ring-violet-300 transition">
+                  <img id="avatarPreview" src="" alt="Tuấn Việt" class="hidden w-full h-full object-cover" />
+                  <span id="avatarFallback">TV</span>
+                  <span class="absolute inset-0 bg-black/55 text-white opacity-0 group-hover:opacity-100 transition grid place-items-center">
+                    <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                  </span>
+                </button>
               </div>
               <div class="grid grid-cols-3 gap-2 md:gap-3 mt-7">
                 <div class="rounded-xl border border-white/[.08] bg-white/[.025] p-3"><i data-lucide="layers" class="w-4 h-4 text-violet-200"></i><p class="text-lg md:text-2xl font-bold mt-3">12</p><p class="text-[8px] md:text-[10px] text-gray-500">Dự án đang chạy</p></div>
@@ -203,9 +216,9 @@
                   </div>
                 </div>
                 <div class="md:col-span-2 rounded-xl border border-violet-300/15 bg-gradient-to-br from-violet-400/10 to-transparent p-4">
-                  <div class="flex items-center gap-2 text-violet-200"><i data-lucide="sparkles" class="w-4 h-4"></i><span class="text-xs font-bold">AURA Assistant</span></div>
+                  <div class="flex items-center gap-2 text-violet-200"><i data-lucide="sparkles" class="w-4 h-4"></i><span class="text-xs font-bold">Tuấn Việt Assistant</span></div>
                   <p class="text-[11px] leading-5 text-gray-300 mt-4">“Mình đã tổng hợp 3 ưu tiên quan trọng nhất hôm nay. Bắt đầu với kế hoạch nội dung nhé?”</p>
-                  <div class="mt-4 rounded-lg bg-black/20 border border-white/[.08] p-2.5 text-[9px] text-gray-400 flex items-center justify-between">Hỏi AURA bất cứ điều gì <i data-lucide="arrow-up-right" class="w-3 h-3 text-violet-200"></i></div>
+                  <div class="mt-4 rounded-lg bg-black/20 border border-white/[.08] p-2.5 text-[9px] text-gray-400 flex items-center justify-between">Hỏi Tuấn Việt bất cứ điều gì <i data-lucide="arrow-up-right" class="w-3 h-3 text-violet-200"></i></div>
                 </div>
               </div>
             </div>
@@ -238,7 +251,7 @@
       <div class="reveal max-w-2xl mb-12">
         <p class="section-kicker mb-4">Một không gian. Vô vàn khả năng.</p>
         <h2 class="text-3xl md:text-5xl font-extrabold tracking-[-.055em] leading-tight">Mọi thứ bạn cần.<br><span class="gradient-text">Ở đúng một nơi.</span></h2>
-        <p class="muted mt-5 leading-7 text-sm md:text-base">Tập trung vào điều quan trọng nhất. AURA kết nối công cụ, quy trình và ý tưởng trong một trải nghiệm liền mạch.</p>
+        <p class="muted mt-5 leading-7 text-sm md:text-base">Tập trung vào điều quan trọng nhất. Tuấn Việt kết nối công cụ, quy trình và ý tưởng trong một trải nghiệm liền mạch.</p>
       </div>
 
       <div class="grid md:grid-cols-6 gap-4">
@@ -287,6 +300,43 @@
       </div>
     </section>
 
+    <!-- KHU VỰC THÊM & TRƯNG BÀY ẢNH -->
+    <section id="gallery" class="max-w-6xl mx-auto px-5 pb-24">
+      <div class="panel reveal p-6 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+          <div>
+            <p class="section-kicker mb-3">Không gian hình ảnh của Tuấn Việt</p>
+            <h2 class="text-2xl md:text-4xl font-extrabold tracking-[-.045em]">Lưu giữ ý tưởng <span class="gradient-text">bằng hình ảnh.</span></h2>
+            <p class="muted text-sm mt-2">Chọn ảnh từ thiết bị hoặc kéo thả trực tiếp vào khung bên dưới.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <button type="button" onclick="document.getElementById('galleryInput').click()" class="btn rounded-xl bg-white text-[#101116] px-4 py-2.5 text-xs font-extrabold inline-flex items-center gap-2">
+              <i data-lucide="upload" class="w-4 h-4"></i> Tải ảnh lên
+            </button>
+            <button type="button" onclick="addImageByUrl()" class="btn rounded-xl border border-white/15 bg-white/[.04] text-white px-4 py-2.5 text-xs font-bold inline-flex items-center gap-2 hover:bg-white/[.08]">
+              <i data-lucide="link" class="w-4 h-4 text-violet-200"></i> Thêm từ URL
+            </button>
+            <button type="button" id="clearImagesBtn" onclick="clearAllImages()" class="hidden rounded-xl border border-rose-400/20 bg-rose-500/10 text-rose-200 px-3.5 py-2.5 text-xs font-bold inline-flex items-center gap-1.5 hover:bg-rose-500/20 transition">
+              <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Xóa tất cả
+            </button>
+          </div>
+        </div>
+
+        <!-- Vùng kéo thả / hiển thị ảnh -->
+        <div id="dropZone" class="rounded-2xl border border-dashed border-white/15 bg-white/[.015] p-6 transition-colors">
+          <div id="emptyGalleryState" onclick="document.getElementById('galleryInput').click()" class="cursor-pointer py-10 text-center">
+            <div class="w-12 h-12 rounded-2xl mx-auto mb-4 bg-violet-400/10 border border-violet-300/20 text-violet-200 grid place-items-center">
+              <i data-lucide="image-plus" class="w-6 h-6"></i>
+            </div>
+            <p class="text-sm font-bold">Kéo thả ảnh vào đây hoặc bấm để chọn ảnh</p>
+            <p class="text-xs muted mt-1">Hỗ trợ PNG, JPG, WEBP — Ảnh được lưu tự động trên trình duyệt của bạn</p>
+          </div>
+
+          <div id="imageGrid" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- Workflow -->
     <section id="workflow" class="py-20 md:py-28 border-y border-white/[.06] bg-white/[.015]">
       <div class="max-w-6xl mx-auto px-5">
@@ -299,7 +349,7 @@
           </div>
           <div class="space-y-4">
             <div class="reveal panel p-5 flex gap-4 items-start"><div class="w-9 h-9 shrink-0 rounded-xl bg-violet-300/15 text-violet-200 grid place-items-center text-xs font-extrabold">01</div><div><h3 class="font-bold">Gom ý tưởng</h3><p class="muted text-sm leading-6 mt-1">Đưa ghi chú, tài liệu và mục tiêu về cùng một workspace.</p></div></div>
-            <div class="reveal delay-1 panel p-5 flex gap-4 items-start"><div class="w-9 h-9 shrink-0 rounded-xl bg-emerald-300/10 text-emerald-200 grid place-items-center text-xs font-extrabold">02</div><div><h3 class="font-bold">Để AURA hỗ trợ</h3><p class="muted text-sm leading-6 mt-1">AI giúp bạn phân tích, sắp xếp ưu tiên và đề xuất hướng đi.</p></div></div>
+            <div class="reveal delay-1 panel p-5 flex gap-4 items-start"><div class="w-9 h-9 shrink-0 rounded-xl bg-emerald-300/10 text-emerald-200 grid place-items-center text-xs font-extrabold">02</div><div><h3 class="font-bold">Để Tuấn Việt hỗ trợ</h3><p class="muted text-sm leading-6 mt-1">AI giúp bạn phân tích, sắp xếp ưu tiên và đề xuất hướng đi.</p></div></div>
             <div class="reveal delay-2 panel p-5 flex gap-4 items-start"><div class="w-9 h-9 shrink-0 rounded-xl bg-amber-300/10 text-amber-200 grid place-items-center text-xs font-extrabold">03</div><div><h3 class="font-bold">Tạo ra kết quả</h3><p class="muted text-sm leading-6 mt-1">Theo dõi tiến độ và biến kế hoạch thành những bước hoàn thành cụ thể.</p></div></div>
           </div>
         </div>
@@ -314,7 +364,7 @@
         <p class="muted mt-5 text-sm leading-7">Một trải nghiệm tốt không chỉ nằm ở công nghệ, mà còn ở cách nó giúp con người làm việc tốt hơn.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-4 mt-12">
-        <figure class="reveal panel p-6"><div class="flex gap-1 text-amber-200 mb-5">★★★★★</div><blockquote class="text-sm leading-7 text-gray-300">“AURA giúp team mình có một nơi rõ ràng để suy nghĩ, phối hợp và theo dõi công việc. Mọi thứ nhẹ nhàng hơn rất nhiều.”</blockquote><figcaption class="mt-7 flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-gradient-to-br from-violet-300 to-indigo-500 grid place-items-center text-xs font-bold text-black">ML</div><div><p class="text-xs font-bold">Minh Lê</p><p class="text-[10px] muted mt-1">Creative Lead</p></div></figcaption></figure>
+        <figure class="reveal panel p-6"><div class="flex gap-1 text-amber-200 mb-5">★★★★★</div><blockquote class="text-sm leading-7 text-gray-300">“Tuấn Việt giúp team mình có một nơi rõ ràng để suy nghĩ, phối hợp và theo dõi công việc. Mọi thứ nhẹ nhàng hơn rất nhiều.”</blockquote><figcaption class="mt-7 flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-gradient-to-br from-violet-300 to-indigo-500 grid place-items-center text-xs font-bold text-black">ML</div><div><p class="text-xs font-bold">Minh Lê</p><p class="text-[10px] muted mt-1">Creative Lead</p></div></figcaption></figure>
         <figure class="reveal delay-1 panel p-6"><div class="flex gap-1 text-amber-200 mb-5">★★★★★</div><blockquote class="text-sm leading-7 text-gray-300">“Mình thích cảm giác mọi thứ được sắp xếp vừa đủ. AI hỗ trợ đúng lúc, còn giao diện thì không làm mình mất tập trung.”</blockquote><figcaption class="mt-7 flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-200 to-teal-500 grid place-items-center text-xs font-bold text-black">AT</div><div><p class="text-xs font-bold">An Trần</p><p class="text-[10px] muted mt-1">Product Designer</p></div></figcaption></figure>
         <figure class="reveal delay-2 panel p-6"><div class="flex gap-1 text-amber-200 mb-5">★★★★★</div><blockquote class="text-sm leading-7 text-gray-300">“Một công cụ có tư duy thiết kế tốt. Mình có thể bắt đầu nhanh và giữ được nhịp làm việc xuyên suốt dự án.”</blockquote><figcaption class="mt-7 flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-gradient-to-br from-amber-200 to-orange-400 grid place-items-center text-xs font-bold text-black">KH</div><div><p class="text-xs font-bold">Khánh Hoàng</p><p class="text-[10px] muted mt-1">Founder</p></div></figcaption></figure>
       </div>
@@ -328,7 +378,7 @@
         <div class="relative grid md:grid-cols-2 gap-10 items-center">
           <div><p class="section-kicker mb-4">Bắt đầu theo cách của bạn</p><h2 class="text-3xl md:text-4xl font-extrabold tracking-[-.05em]">Không cần phức tạp<br>để làm điều <span class="gradient-text">phi thường.</span></h2><p class="muted text-sm leading-7 mt-5 max-w-md">Khám phá không gian làm việc mới và tìm ra nhịp độ phù hợp nhất với bạn.</p></div>
           <div class="rounded-2xl border border-white/10 bg-black/20 p-6 md:p-7">
-            <div class="flex items-center justify-between"><span class="text-sm font-bold">AURA Starter</span><span class="text-[10px] rounded-full bg-emerald-300/10 text-emerald-200 px-3 py-1">Miễn phí</span></div>
+            <div class="flex items-center justify-between"><span class="text-sm font-bold">Tuấn Việt Starter</span><span class="text-[10px] rounded-full bg-emerald-300/10 text-emerald-200 px-3 py-1">Miễn phí</span></div>
             <div class="mt-4 text-4xl font-extrabold tracking-tight">₫0 <span class="text-xs font-medium text-gray-500">/ mãi mãi</span></div>
             <ul class="mt-6 space-y-3 text-xs text-gray-300">
               <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-200"></i> Không gian làm việc cá nhân</li>
@@ -347,8 +397,8 @@
         <div class="w-12 h-12 rounded-2xl mx-auto mb-6 bg-gradient-to-br from-violet-300 to-emerald-200 text-black grid place-items-center"><i data-lucide="aperture" class="w-6 h-6"></i></div>
         <p class="section-kicker mb-4">Không gian mới đang chờ bạn</p>
         <h2 class="text-4xl md:text-6xl font-extrabold tracking-[-.065em]">Sẵn sàng tạo nên<br><span class="gradient-text">điều tuyệt vời?</span></h2>
-        <p class="muted mt-5 text-sm leading-7">Bắt đầu với AURA — và dành nhiều thời gian hơn cho những điều thực sự quan trọng.</p>
-        <a href="mailto:hello@aura.example" class="btn inline-flex mt-8 rounded-xl bg-white text-black px-7 py-4 text-sm font-extrabold items-center gap-2">Liên hệ để bắt đầu <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+        <p class="muted mt-5 text-sm leading-7">Bắt đầu với Tuấn Việt — và dành nhiều thời gian hơn cho những điều thực sự quan trọng.</p>
+        <a href="mailto:hello@tuanviet.example" class="btn inline-flex mt-8 rounded-xl bg-white text-black px-7 py-4 text-sm font-extrabold items-center gap-2">Liên hệ để bắt đầu <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
       </div>
     </section>
   </main>
@@ -356,11 +406,22 @@
   <!-- Footer -->
   <footer class="border-t border-white/[.07]">
     <div class="max-w-6xl mx-auto px-5 py-9 flex flex-col md:flex-row items-center justify-between gap-5">
-      <a href="#home" class="flex items-center gap-2 font-extrabold tracking-tight"><span class="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-300 to-emerald-200 text-black grid place-items-center"><i data-lucide="aperture" class="w-4 h-4"></i></span>AURA<span class="text-violet-200">.</span></a>
-      <p class="text-[10px] muted text-center">© <span id="year"></span> AURA Studio. Crafted for curious minds.</p>
-      <div class="flex items-center gap-5 text-[11px] text-gray-500"><a href="#features" class="hover:text-white transition-colors">Tính năng</a><a href="mailto:hello@aura.example" class="hover:text-white transition-colors">Liên hệ</a><a href="#home" class="hover:text-white transition-colors">Trở lên đầu ↑</a></div>
+      <a href="#home" class="flex items-center gap-2 font-extrabold tracking-tight"><span class="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-300 to-emerald-200 text-black grid place-items-center"><i data-lucide="aperture" class="w-4 h-4"></i></span>TUẤN VIỆT<span class="text-violet-200">.</span></a>
+      <p class="text-[10px] muted text-center">© <span id="year"></span> Tuấn Việt Studio. Crafted for curious minds.</p>
+      <div class="flex items-center gap-5 text-[11px] text-gray-500"><a href="#features" class="hover:text-white transition-colors">Tính năng</a><a href="mailto:hello@tuanviet.example" class="hover:text-white transition-colors">Liên hệ</a><a href="#home" class="hover:text-white transition-colors">Trở lên đầu ↑</a></div>
     </div>
   </footer>
+
+  <!-- Lightbox xem ảnh phóng to -->
+  <div id="lightbox" onclick="closeLightbox()" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md p-4 place-items-center">
+    <div class="relative max-w-4xl w-full" onclick="event.stopPropagation()">
+      <button type="button" onclick="closeLightbox()" class="absolute -top-11 right-0 rounded-xl bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 text-xs font-bold inline-flex items-center gap-1.5">
+        <i data-lucide="x" class="w-4 h-4"></i> Đóng
+      </button>
+      <img id="lightboxImg" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-2xl border border-white/15 bg-black/40" />
+      <p id="lightboxCaption" class="text-center text-xs text-gray-300 mt-3"></p>
+    </div>
+  </div>
 
   <script>
     // Khởi tạo icon Lucide
@@ -369,7 +430,7 @@
     // Năm hiện tại ở footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Menu mobile: mở/đóng và tự đóng sau khi chọn mục
+    // Menu mobile
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     menuToggle.addEventListener('click', () => {
@@ -388,7 +449,7 @@
       lucide.createIcons();
     }));
 
-    // Reveal khi cuộn: IntersectionObserver nhẹ, không chạy animation liên tục
+    // Reveal khi cuộn
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -399,7 +460,7 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Làm nổi bật mục điều hướng tương ứng với section đang xem
+    // Làm nổi bật mục điều hướng tương ứng
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
     const sectionObserver = new IntersectionObserver(entries => {
@@ -410,6 +471,170 @@
       });
     }, { rootMargin: '-35% 0px -55% 0px' });
     sections.forEach(section => sectionObserver.observe(section));
+
+    // ==========================================
+    // TÍNH NĂNG THÊM & LƯU ẢNH CHO TUẤN VIỆT
+    // ==========================================
+    const AVATAR_KEY = 'tuanviet_avatar';
+    const GALLERY_KEY = 'tuanviet_gallery';
+    let galleryImages = JSON.parse(localStorage.getItem(GALLERY_KEY) || '[]');
+
+    // Khôi phục Avatar đã lưu
+    const savedAvatar = localStorage.getItem(AVATAR_KEY);
+    if (savedAvatar) applyAvatar(savedAvatar);
+
+    function applyAvatar(src) {
+      const img = document.getElementById('avatarPreview');
+      const fallback = document.getElementById('avatarFallback');
+      img.src = src;
+      img.classList.remove('hidden');
+      fallback.classList.add('hidden');
+    }
+
+    document.getElementById('avatarInput').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        applyAvatar(ev.target.result);
+        try { localStorage.setItem(AVATAR_KEY, ev.target.result); } catch (_) {}
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Render thư viện ảnh
+    function renderGallery() {
+      const grid = document.getElementById('imageGrid');
+      const empty = document.getElementById('emptyGalleryState');
+      const clearBtn = document.getElementById('clearImagesBtn');
+
+      if (!galleryImages.length) {
+        grid.classList.add('hidden');
+        empty.classList.remove('hidden');
+        clearBtn.classList.add('hidden');
+        grid.innerHTML = '';
+        return;
+      }
+
+      empty.classList.add('hidden');
+      grid.classList.remove('hidden');
+      clearBtn.classList.remove('hidden');
+
+      grid.innerHTML = galleryImages.map((item, idx) => `
+        <div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-black/30 aspect-[4/3]">
+          <img src="${item.src}" alt="${item.name}" onclick="openLightbox(${idx})"
+               class="w-full h-full object-cover cursor-zoom-in transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex items-center justify-between gap-2">
+            <span class="text-[11px] font-semibold text-white truncate">${item.name}</span>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="setAsAvatar(${idx})" title="Đặt làm ảnh đại diện"
+                      class="w-7 h-7 rounded-lg bg-white/15 hover:bg-violet-400 hover:text-black text-white grid place-items-center transition">
+                <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+              </button>
+              <button type="button" onclick="removeImage(${idx})" title="Xóa ảnh"
+                      class="w-7 h-7 rounded-lg bg-white/15 hover:bg-rose-500 text-white grid place-items-center transition">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    function saveGallery() {
+      try {
+        localStorage.setItem(GALLERY_KEY, JSON.stringify(galleryImages));
+      } catch (err) {
+        alert('Dung lượng bộ nhớ trình duyệt đã đầy, một số ảnh lớn có thể không lưu lại sau khi tải lại trang.');
+      }
+    }
+
+    function handleFiles(files) {
+      Array.from(files).forEach(file => {
+        if (!file.type.startsWith('image/')) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          galleryImages.unshift({ name: file.name, src: ev.target.result });
+          saveGallery();
+          renderGallery();
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    document.getElementById('galleryInput').addEventListener('change', (e) => {
+      handleFiles(e.target.files);
+      e.target.value = '';
+    });
+
+    function addImageByUrl() {
+      const url = prompt('Dán đường dẫn (URL) hình ảnh của bạn:');
+      if (!url || !url.trim()) return;
+      const caption = prompt('Đặt tên cho ảnh (không bắt buộc):') || 'Ảnh của Tuấn Việt';
+      galleryImages.unshift({ name: caption.trim(), src: url.trim() });
+      saveGallery();
+      renderGallery();
+    }
+
+    function setAsAvatar(index) {
+      const item = galleryImages[index];
+      if (!item) return;
+      applyAvatar(item.src);
+      try { localStorage.setItem(AVATAR_KEY, item.src); } catch (_) {}
+      document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function removeImage(index) {
+      galleryImages.splice(index, 1);
+      saveGallery();
+      renderGallery();
+    }
+
+    function clearAllImages() {
+      if (!confirm('Bạn có chắc muốn xóa toàn bộ ảnh đã thêm?')) return;
+      galleryImages = [];
+      saveGallery();
+      renderGallery();
+    }
+
+    // Kéo thả ảnh trực tiếp
+    const dropZone = document.getElementById('dropZone');
+    ['dragenter', 'dragover'].forEach(evt => {
+      dropZone.addEventListener(evt, (e) => {
+        e.preventDefault();
+        dropZone.classList.add('border-violet-300', 'bg-violet-400/5');
+      });
+    });
+    ['dragleave', 'drop'].forEach(evt => {
+      dropZone.addEventListener(evt, (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('border-violet-300', 'bg-violet-400/5');
+      });
+    });
+    dropZone.addEventListener('drop', (e) => {
+      if (e.dataTransfer.files?.length) handleFiles(e.dataTransfer.files);
+    });
+
+    // Lightbox phóng to
+    function openLightbox(index) {
+      const item = galleryImages[index];
+      if (!item) return;
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightboxImg').src = item.src;
+      document.getElementById('lightboxCaption').textContent = item.name;
+      lb.classList.remove('hidden');
+      lb.classList.add('grid');
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden');
+      lb.classList.remove('grid');
+    }
+
+    renderGallery();
   </script>
 </body>
 </html>
